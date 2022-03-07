@@ -4,8 +4,8 @@
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Planning and Approval | Incomplete
-|Day 1| Set up backend files and structure | Incomplete
+|Day 1| Planning and Approval | Complete
+|Day 1| Set up backend files and structure | Complete
 |Day 2| Set up frontend files and structure | Incomplete
 |Day 2| Test and deploy backend | Incomplete
 |Day 3| CSS Styling and Responsive Design | Incomplete
@@ -49,8 +49,8 @@ The user of our app will check in daily- preferably at the end of their day- to 
 
 #### MVP (examples)
 
-- 5 models for our data (User, Activity, Food, Mood, Daily Weight)
-- CRUD functionality (Add User, View all Activities, Edit Daily Tracker, Delete Daily Tracker)
+- 2 models for our data (Activity, Person)
+- CRUD functionality (Add Person, View Person, Edit Activity/Person, Delete Person/Activity)
 - Have 4 Routes and components on frontend (Home, Daily Tracker, My Health Page, About Team)
 - Fetch data from our backend API
 - Responsive design from mobile to desktop
@@ -59,8 +59,8 @@ The user of our app will check in daily- preferably at the end of their day- to 
 
 #### PostMVP 
 
-- Add a 6th model to track friends
-- Add a 5th route to see all friends
+- Add a more models (Food, Mood, Daily Weight, Track Friends)
+- Add a more routes for extra models
 - Add page with suggested activities or meals
 - Login authentication
 - Adding animations
@@ -69,13 +69,14 @@ The user of our app will check in daily- preferably at the end of their day- to 
 
 | **URL**     | **HTTP Verb** | **Action** | **Description**             |
 | ----------- | ------------- | -------------- | ---------------------- |
-| /newUser     | POST           |    create           | add new user   |
-| /daily/:type    | POST          |    create          | add activity/meal/mood/weight    |
-| /user/:email | GET       |    show            | show all of this users data    |
-| /weekly/:id | GET       |    show            | show one week of users data  |
-| /daily/:id | GET       |    show            | show one day of users data  |
-| /daily/:day/:id | PUT         |    update            | edit daily input |
-| /daily/:id | DELETE        |    delete           | delete a daily input |
+| /person     | POST       |    create      | add new user   |
+| /activity    | POST      |    create    | add activity/meal/mood/weight    |
+| /person     | GET       |    show       | show all of this users data    |
+| /person/:id | GET       |    show       | show one week of users data  |
+| /activity/:id | PUT      |    update            | edit daily input |
+| /person/:id | PUT      |    update            | edit person|
+| /person/:id | DELETE      |    delete            | delete person |
+| /activity/:id | DELETE      |    delete           | delete a daily input |
 
 ## Functional Components
 
@@ -93,9 +94,9 @@ The user of our app will check in daily- preferably at the end of their day- to 
 #### MVP
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | 
-| Installing and Setup for backend | H | 1hr | hr |
-| Models and Schemas | H | 2hr | hr |
-| CRUD Routes and testing on Postman | H | 3hr | hr |  
+| Installing and Setup for backend | H | 1hr | 1hr |
+| Models and Schemas | H | 2hr | 1hr |
+| CRUD Routes and testing on Postman | H | 3hr | 1hr |  
 | Deploying backend | H | 1.5hr|  hr | 
 | Creating React App | H | 1hr | hr|
 | Add Routes | H | 1hrs|  hr | 
@@ -114,6 +115,7 @@ The user of our app will check in daily- preferably at the end of their day- to 
 | Suggestion Page | M | 4hr | hr |
 | Login Authentication | H | 4hr | hr |
 | Animations | H | 4hr | hr |
+| CRUD Routes and testing on Postman | H | 3hr | hr |  
 | Total | H | 16hrs| hrs |
 
 ## Additional Libraries
