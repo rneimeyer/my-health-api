@@ -30,7 +30,7 @@ router.put("/:id", (req, res) => {
 // delete - deletes an activity
 router.delete("/:id", (req, res) => {
   Activity.findByIdAndDelete(req.params.id).then((activity) =>
-    res.json(`deleted ${activity.name}`)
+    res.json(`deleted ${activity.exercise}`)
   );
 });
 
