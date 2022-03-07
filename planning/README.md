@@ -24,10 +24,10 @@ This app will include a backend database using MongoDB and Express.js and a fron
 
 Overall we want to work on this project as a team- step by step. We will split up Models/Compenents when working on the frontend or backend. But we will work on the same part of the project together and not split up.
 
-Lauren- Create a model, work on CR routes, and one component
-Anju- Create a model, work on CR routes, and one component
-Rebecca- Create a model, work on UD routes, and one component
-Kae- Create a model, work on UD routes, and one component
+- Lauren- Create a model, work on CR routes, and one component
+- Anju- Create a model, work on CR routes, and one component
+- Rebecca- Create a model, work on UD routes, and one component
+- Kae- Create a model, work on UD routes, and one component
 
 ## User Stories
 
@@ -67,13 +67,13 @@ The user of our app will check in daily- preferably at the end of their day- to 
 
 ## Routing Table
 
-Update the below routing table with the routes
-
 | **URL**     | **HTTP Verb** | **Action** | **Description**             |
 | ----------- | ------------- | -------------- | ---------------------- |
 | /newUser     | POST           |    create           | add new user   |
 | /daily/:type    | POST          |    create          | add activity/meal/mood/weight    |
 | /user/:email | GET       |    show            | show all of this users data    |
+| /weekly/:id | GET       |    show            | show one week of users data  |
+| /daily/:id | GET       |    show            | show one day of users data  |
 | /daily/:day/:id | PUT         |    update            | edit daily input |
 | /daily/:id | DELETE        |    delete           | delete a daily input |
 
@@ -124,9 +124,8 @@ Update the below routing table with the routes
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+TBD
+
 ```
 
 ## Issues and Resolutions
