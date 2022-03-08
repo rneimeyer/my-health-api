@@ -5,6 +5,25 @@ const router = express.Router();
 
 const Activity = require("./../models/Activity");
 
+//index - returns all users and their data
+router.get("/", (req, res) => {
+  Activity.find({}).then((activity) => {
+      res.json({
+          status: 200,
+          activity: activity,
+      });
+  });
+});
+
+router.get("/:id", (req, res) => {
+  Activity.findById(req.params.id).then((activity) => {
+      res.json({
+          status: 200,
+          activity: activity,
+      });
+  });
+});
+
 // post - adds an activity
 router.post("/", (req, res) => {
   Activity.create(req.body).then((activity) =>
