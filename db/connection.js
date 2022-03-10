@@ -1,5 +1,13 @@
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb://localhost/my-health-api")
+let mongoURL = ""
+
+if (process.env.NODE_ENV === "production") {
+  mongoURL = process.env.DB_URL;
+} else {
+  mongoURL = "mongodb://localhost/my-health-api";
+}
+
+mongoose.connect(mongoURL)
 
 module.exports = mongoose
