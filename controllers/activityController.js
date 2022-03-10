@@ -5,16 +5,7 @@ const router = express.Router();
 
 const Activity = require("./../models/Activity");
 
-//index - returns all users and their data
-router.get("/", (req, res) => {
-  Activity.find({}).then((activity) => {
-      res.json({
-          status: 200,
-          activity: activity,
-      });
-  });
-});
-
+//returns single activity by id
 router.get("/:id", (req, res) => {
   Activity.findById(req.params.id).then((activity) => {
       res.json({
@@ -24,7 +15,7 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// post - adds an activity
+//creates a new activity
 router.post("/", (req, res) => {
   Activity.create(req.body).then((activity) =>
     res.json({
@@ -34,7 +25,7 @@ router.post("/", (req, res) => {
   );
 });
 
-// put - updates an activity
+//updates an activity
 router.put("/:id", (req, res) => {
   Activity.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
     (activity) => {
@@ -46,11 +37,21 @@ router.put("/:id", (req, res) => {
   );
 });
 
-// delete - deletes an activity
+//deletes an activity
 router.delete("/:id", (req, res) => {
   Activity.findByIdAndDelete(req.params.id).then(() =>
     res.json(`deleted`)
   );
+});
+
+//returns all activities- currently not being used, plan to add in future versions.
+router.get("/", (req, res) => {
+  Activity.find({}).then((activity) => {
+      res.json({
+          status: 200,
+          activity: activity,
+      });
+  });
 });
 
 module.exports = router;

@@ -14,7 +14,7 @@ app.use(logger('dev'))
 app.use(cors())
 
 app.get('/', function(req, res) {
-    res.send('hello, world')
+    res.send('Welcome to our health data api. Please try /person or /activity to see more')
 })
 
 app.use('/person', personController)

@@ -1,10 +1,11 @@
+//person controller
 const express = require('express');
 const router = express.Router();
 
 //import model
 const Person = require("./../models/Person")
 
-//index - returns all users and their data
+//returns all users and their data
 router.get("/", (req, res) => {
     Person.find({}).populate('activity').then((person) => {
         res.json({
@@ -14,7 +15,7 @@ router.get("/", (req, res) => {
     });
 });
 
-//show - returns a single user and their data
+//returns a single user and their data
 router.get("/:id", (req, res) => {
     Person.findById(req.params.id).populate('activity').then((person) => {
         res.json({
@@ -35,9 +36,9 @@ router.post("/", (req, res) => {
     })
 })
 
-//delete user
-router.delete("/:id", (req, res) => {
-    Person.findByIdAndDelete(req.params.id).then((person) => {
+//update user
+router.put("/:id", (req, res) => {
+    Person.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((person) => {
         res.json({
             status: 200,
             person: person,
@@ -45,9 +46,9 @@ router.delete("/:id", (req, res) => {
     })
 })
 
-//update user
-router.put("/:id", (req, res) => {
-    Person.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((person) => {
+//delete user- currently not being used, plan to add in future versions.
+router.delete("/:id", (req, res) => {
+    Person.findByIdAndDelete(req.params.id).then((person) => {
         res.json({
             status: 200,
             person: person,
